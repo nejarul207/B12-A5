@@ -451,6 +451,44 @@
                     });
                 });
             });
+            // Call functionality
+            callBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const number = btn.getAttribute("data-number");
+                    const name = btn.getAttribute("data-name");
+
+                    if (coinCount < 20) {
+                        alert("Not enough coins to make a call!");
+                        return;
+                    }
+
+                    coinCount -= 20;
+                    coinCountEl.textContent = coinCount;
+
+                    alert(`Calling ${name} at ${number}...`);
+
+                    // Add call to history with timestamp
+                    const now = new Date();
+                    const time = now.toLocaleTimeString();
+
+                    const historyItem = document.createElement("div");
+                    historyItem.className = "p-3 border rounded-lg flex justify-between items-center";
+                    historyItem.innerHTML = `
+        <div>
+          <p class="font-semibold">${name}</p>
+          <p class="text-sm text-gray-600">${number}</p>
+        </div>
+        <div class="text-xs text-gray-500">${time}</div>
+      `;
+                    historyList.prepend(historyItem);
+                });
+            });
+
+            // Clear history
+            clearHistoryBtn.addEventListener("click", () => {
+                historyList.innerHTML = "";
+            });
+        });
 
     </script>
 </body>
