@@ -433,6 +433,25 @@
                 });
             });
 
+             // Copy functionality
+            copyBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const number = btn.getAttribute("data-number");
+                    const name = btn.getAttribute("data-name");
+
+                    navigator.clipboard.writeText(number).then(() => {
+                        alert(`Copied ${name} (${number}) to clipboard!`);
+
+                        // Update Copy Count in navbar
+                        copyCount++;
+                        copyCountEl.textContent = `${copyCount} Copy${copyCount > 1 ? 'es' : ''}`;
+                    }).catch(err => {
+                        alert("Failed to copy!");
+                        console.error(err);
+                    });
+                });
+            });
+
     </script>
 </body>
 
