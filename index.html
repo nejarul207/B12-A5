@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body class="bg-green-50">
     <nav class="bg-white p-2 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex flex-wrap justify-between items-center">
@@ -56,7 +58,7 @@
             </p>
         </div>
     </header>
-    <main>
+    <main class="container mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         <section class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6" id="cards-container">
             <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
                 <div>
@@ -387,6 +389,51 @@
                 </div>
             </div>
         </section>
+        <section class="bg-white p-6 rounded-lg shadow-md h-fit">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-2 text-black">
+                    <i class="fas fa-history text-lg"></i>
+                    <h2 class="text-xl font-semibold">Call History</h2>
+                </div>
+                <button id="clear-history-btn"
+                    class="text-white bg-green-600 font-normal px-3 py-1 rounded-2xl hover:bg-green-800 transition-colors">
+                    Clear
+                </button>
+            </div>
+            <div id="history-list" class="space-y-4">
+            </div>
+        </section>
     </main>
+     <!-- JavaScript -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+            // Navbar counters
+            const heartCountEl = document.getElementById("heart-count");
+            const coinCountEl = document.getElementById("coin-count");
+            const copyCountEl = document.getElementById("copy-count");
+
+             // Buttons & history container
+            const heartIcons = document.querySelectorAll(".favorite-btn");
+            const copyBtns = document.querySelectorAll(".copy-btn");
+            const callBtns = document.querySelectorAll(".call-btn");
+            const historyList = document.getElementById("history-list");
+            const clearHistoryBtn = document.getElementById("clear-history-btn");
+
+            // Initialize counts
+            let heartCount = 0;
+            let coinCount = 100;
+            let copyCount = 0;
+
+
+            // Heart functionality
+            heartIcons.forEach(icon => {
+                icon.addEventListener("click", () => {
+                    heartCount++;
+                    heartCountEl.textContent = heartCount;
+                    showToast("❤️ Added to favorites!", "heart");
+                });
+            });
+
+    </script>
 </body>
+
 </html>
