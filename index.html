@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-green-50">
+    <nav class="bg-white p-2 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+
+            <!-- Logo + Title -->
+            <div class="flex items-center space-x-2">
+                <img src="assets/logo.png" alt="Logo" class="h-9 w-9" />
+                <span class="text-sm sm:text-base font-extrabold text-green-800 leading-tight">
+                    Emergency <br class="hidden sm:block"> Service
+                </span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap sm:flex-nowrap gap-2 mt-2 sm:mt-0">
+
+                <!-- Heart -->
+                <div class="flex bg-green-200 h-8 w-20 p-1 justify-center rounded-xl items-center">
+                    <span id="heart-count" class="font-bold">0</span>
+                    <img src="assets/heart.png" alt="heart" class="h-5 w-5 ml-1">
+                </div>
+
+                <!-- Coin -->
+                <div class="flex bg-green-200 h-8 w-20 p-1 justify-center rounded-xl items-center">
+                    <span id="coin-count" class="font-bold">100</span>
+                    <img src="assets/coin.png" alt="coin" class="h-5 w-5 ml-1">
+                </div>
+
+                <!-- Copy -->
+                <div class="flex bg-green-500 h-8 w-28 p-1 justify-center rounded-xl items-center">
+                    <span id="copy-count" class="font-bold text-white">0 Copy</span>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
