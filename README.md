@@ -1,12 +1,9 @@
 Question-1 : What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
 Answer : getElementById : selects one element by ID, returns a single element.
-
-         getElementsByClassName : selects all elements with a class, returns a live HTMLCollection.
-         
-         querySelector : selects the first element matching any CSS selector, returns a single element.
-         
-         querySelectorAll : selects all elements matching any CSS selector, returns a static NodeList.
+ getElementsByClassName : selects all elements with a class, returns a live HTMLCollection.
+ querySelector : selects the first element matching any CSS selector, returns a single element.    
+ querySelectorAll : selects all elements matching any CSS selector, returns a static NodeList.
 
 Question-2 : How do you create and insert a new element into the DOM?
 
@@ -18,7 +15,7 @@ Question-3 : What is Event Bubbling and how does it work?
 
 Answer : Event Bubbling is a process where an event that happens on a child element “bubbles up” and triggers the same event on its parent elements in the DOM hierarchy.
 
-         How it works: 1. An event occurs on a target element.
+ How it works: 1. An event occurs on a target element.
                        2. The event first triggers on that element.
                        3. Then it propagates upward to its parent, then grandparent, and so on, up to the document root.
                        4. All ancestors with listeners for that event will be notified unless propagation is stopped with event.stopPropagation().
