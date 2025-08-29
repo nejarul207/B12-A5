@@ -17,6 +17,7 @@ Answer : const newDiv = document.createElement("div");
 Question-3 : What is Event Bubbling and how does it work?
 
 Answer : Event Bubbling is a process where an event that happens on a child element “bubbles up” and triggers the same event on its parent elements in the DOM hierarchy.
+
          How it works: 1. An event occurs on a target element.
                        2. The event first triggers on that element.
                        3. Then it propagates upward to its parent, then grandparent, and so on, up to the document root.
